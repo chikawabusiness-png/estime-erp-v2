@@ -1,0 +1,25 @@
+insert into public.products (name, sku, price, stock, volume_ml)
+values
+  ('1 MILLION', 'PERF-001-M20', 20, 20, 20),
+  ('BLEU DE CHANEL', 'PERF-002-M20', 20, 20, 20),
+  ('INVICTUS', 'PERF-003-M20', 20, 20, 20),
+  ('SAUVAGE', 'PERF-004-M20', 20, 20, 20),
+  ('LACOSTE NOIR', 'PERF-005-M20', 20, 20, 20),
+  ('Y YSL', 'PERF-006-M20', 20, 20, 20),
+  ('STRONGER WITH YOU', 'PERF-007-M20', 20, 20, 20),
+  ('BACCARAT ROUGE', 'PERF-008-M20', 20, 20, 20),
+  ('SCANDAL HOMME', 'PERF-009-M20', 20, 20, 20),
+  ('ULTRA MALE', 'PERF-010-M20', 20, 20, 20),
+  ('EROS HOMME', 'PERF-011-M20', 20, 20, 20),
+  ('VICTORY ELIXIR', 'PERF-012-M20', 20, 20, 20),
+  ('SAUVAGE ELIXIR', 'PERF-013-M20', 20, 20, 20),
+  ('1 MILLION ELIXIR', 'PERF-014-M20', 20, 20, 20),
+  ('VOYAGE', 'PERF-015-M20', 20, 20, 20),
+  ('LE BEAU PARADISE GARDEN', 'PERF-016-M20', 20, 20, 20),
+  ('ARABIANS TONKA MONTAL', 'PERF-017-M20', 20, 20, 20),
+  ('POUSSIÈRE D''OR', 'PERF-018-M20', 20, 20, 20),
+  ('OUD MOOD', 'PERF-019-M20', 20, 20, 20),
+  ('ANA ABIYAD BLANC', 'PERF-020-M20', 20, 20, 20),
+  ('HUGO BOSS', 'PERF-021-M20', 20, 20, 20),
+  ('BAD BOY', 'PERF-022-M20', 20, 20, 20)
+on conflict (sku) do nothing;

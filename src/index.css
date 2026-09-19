@@ -1,0 +1,207 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-base-100 text-base-content;
+}
+
+.page-content {
+  @apply mx-auto w-full max-w-screen-2xl;
+}
+
+.table-responsive {
+  @apply w-full overflow-x-auto rounded-box;
+}
+
+.table-responsive table {
+  @apply min-w-[640px];
+}
+
+.form-grid {
+  @apply grid grid-cols-1 gap-4 md:grid-cols-2;
+}
+
+.action-row {
+  @apply flex flex-wrap items-center gap-2;
+}
+
+.saas-card {
+  border: 1px solid color-mix(in srgb, hsl(var(--bc)) 7%, transparent);
+  border-radius: 0.875rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04);
+  transition: box-shadow 180ms ease, transform 180ms ease, border-color 180ms ease;
+}
+
+.saas-card:hover {
+  border-color: color-mix(in srgb, hsl(var(--p)) 18%, transparent);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.07), 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.saas-button {
+  border-radius: 0.625rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  transition: background-color 180ms ease, border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+.saas-button:hover {
+  transform: translateY(-1px);
+}
+
+.saas-table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.saas-table thead th {
+  border: 0;
+  color: color-mix(in srgb, hsl(var(--bc)) 52%, transparent);
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.saas-table tbody tr {
+  transition: background-color 150ms ease;
+}
+
+.saas-table tbody tr:hover {
+  background: color-mix(in srgb, hsl(var(--p)) 4%, transparent);
+}
+
+.saas-table tbody td {
+  border: 0;
+  border-top: 1px solid color-mix(in srgb, hsl(var(--bc)) 6%, transparent);
+  padding-bottom: 0.75rem;
+  padding-top: 0.75rem;
+}
+
+.saas-pill {
+  border-radius: 999px;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  padding: 0.25rem 0.625rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .saas-card {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.28), 0 0 24px rgba(255, 255, 255, 0.02);
+  }
+
+  .saas-card:hover {
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 255, 255, 0.025);
+  }
+}
+
+@media (max-width: 639px) {
+  .table-responsive table {
+    @apply text-sm;
+  }
+
+  .table-responsive th,
+  .table-responsive td {
+    @apply whitespace-nowrap px-3 py-2;
+  }
+}
+
+.skeleton-shimmer {
+  @apply animate-pulse bg-base-300 rounded;
+}
+
+.invoice-paper {
+  width: 100%;
+  max-width: 100%;
+  background: white;
+  color: #111827;
+  padding: 1rem;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media print {
+  @page {
+    size: A6 portrait;
+    margin: 0;
+  }
+
+  html,
+  body {
+    width: 105mm;
+    min-width: 105mm;
+    margin: 0;
+    background: white !important;
+  }
+
+  body * {
+    visibility: hidden !important;
+  }
+
+  dialog:has(#invoice-preview) {
+    display: block !important;
+    position: static !important;
+    width: 105mm !important;
+    max-width: none !important;
+    height: auto !important;
+    max-height: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: visible !important;
+    background: white !important;
+  }
+
+  dialog:has(#invoice-preview) .modal-box {
+    width: 105mm !important;
+    max-width: none !important;
+    max-height: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: visible !important;
+    box-shadow: none !important;
+  }
+
+  dialog:has(#invoice-preview) .modal-backdrop {
+    display: none !important;
+  }
+
+  #invoice-preview,
+  #invoice-preview * {
+    visibility: visible !important;
+  }
+
+  #invoice-preview {
+    position: absolute;
+    inset: 0;
+    width: 105mm;
+    min-height: 148mm;
+    padding: 7mm;
+    margin: 0;
+    overflow: hidden;
+    box-shadow: none !important;
+    border: 0 !important;
+    color: #111827 !important;
+  }
+
+  #invoice-preview .print\:hidden {
+    display: none !important;
+  }
+
+  #invoice-preview input,
+  #invoice-preview textarea {
+    font-family: Arial, Helvetica, sans-serif !important;
+  }
+
+  #invoice-preview .invoice-payment-note {
+    border: 0 !important;
+    padding: 0 !important;
+    resize: none !important;
+    background: transparent !important;
+    overflow: hidden !important;
+  }
+}
